@@ -1,7 +1,7 @@
-import steem from '@steemit/steem-js';
+import dpay from '@dpay/js';
 import fetch from 'isomorphic-fetch';
-import { decode } from '@steemit/steem-js/lib/auth/memo';
-import { key_utils } from '@steemit/steem-js/lib/auth/ecc'; // eslint-disable-line camelcase
+import { decode } from '@dpay/js/lib/auth/memo';
+import { key_utils } from '@dpay/js/lib/auth/ecc'; // eslint-disable-line camelcase
 
 export const login = ({ username, wif, role = 'posting' }, cb) => {
   fetch(`/api/login/challenge?username=${username}&role=${role}`)
@@ -31,12 +31,12 @@ export const hasAuthority = (user, clientId, role = 'posting') => {
 };
 
 export const addPostingAuthority = ({ username, wif, clientId }, cb) => {
-  steem.api.getAccounts([username], (err, result) => {
+  dpay.api.getAccounts([username], (err, result) => {
     const { posting, memo_key, json_metadata } = result[0];
     const postingNew = posting;
     if (!hasAuthority(result[0], clientId)) {
       postingNew.account_auths.push([clientId, parseInt(posting.weight_threshold, 10)]);
-      steem.broadcast.accountUpdate(
+      dpay.broadcast.accountUpdate(
         wif,
         username,
         undefined,
@@ -61,7 +61,7 @@ export const authorize = ({ clientId, scope, responseType = 'token' }, cb) => {
     .catch(err => cb(err, null));
 };
 
-// https://github.com/steemit/condenser/blob/634c13cd0d2fafa28592e9d5f43589e201198248/app/components/elements/SuggestPassword.jsx#L97
+// https://github.com/dpayit/condenser/blob/634c13cd0d2fafa28592e9d5f43589e201198248/app/components/elements/SuggestPassword.jsx#L97
 export const createSuggestedPassword = () => {
   const PASSWORD_LENGTH = 32;
   const privateKey = key_utils.get_random_key();
@@ -69,10 +69,10 @@ export const createSuggestedPassword = () => {
 };
 
 export const getAccountCreationFee = async () => {
-  const chainConfig = await steem.api.getConfigAsync();
-  const chainProps = await steem.api.getChainPropertiesAsync();
+  const chainConfig = await dpay.api.getConfigAsync();
+  const chainProps = await dpay.api.getChainPropertiesAsync();
   const accountCreationFee = chainProps.account_creation_fee;
-  const steemModifier = chainConfig.STEEM_CREATE_ACCOUNT_WITH_STEEM_MODIFIER;
-  const accountCreationSteemFee = parseFloat(accountCreationFee.split(' ')[0]) * steemModifier;
-  return `${accountCreationSteemFee.toFixed(3)} STEEM`;
+  const dpayModifier = chainConfig.DPAY_CREATE_ACCOUNT_WITH_DPAY_MODIFIER;
+  const accountCreationDpayFee = parseFloat(accountCreationFee.split(' ')[0]) * dpayModifier;
+  return `${accountCreationDpayFee.toFixed(3)} BEX`;
 };

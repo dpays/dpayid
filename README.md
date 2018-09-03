@@ -1,9 +1,4 @@
-[![CircleCI Build Status](https://circleci.com/gh/steemit/sc2.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/steemit/sc2)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/steemconnect/localized.svg)](https://crowdin.com/project/steemconnect)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/steemit/sc2/dev/LICENSE)
-[![SteemConnect channel on Discord](https://img.shields.io/badge/chat-discord-738bd7.svg)](https://discord.gg/NCZMVev)
-
-# SteemConnect v2
+# dPayID dApp
 
 ## Install
 
@@ -14,11 +9,11 @@ npm install
 
 Add config vars
 ```
-BROADCASTER_USERNAME = Main Steem account holding posting permissions e.g 'steemconnect'
+BROADCASTER_USERNAME = Main dPay account holding posting permissions e.g 'dpayid'
 BROADCASTER_POSTING_WIF = Posting wif of the main account
 JWT_SECRET = Random string
 DATABASE_URL = PostgreSQL database URL
-DEBUG = sc2:*
+DEBUG = dpid:*
 ```
 
 ## Run
@@ -28,7 +23,7 @@ npm start
 
 ## Demo
 
-Test demo app here: https://steemit.github.io/example-steemconnect-angular/
+Test demo app here: https://dpays.github.io/example-dpayid-angular/
 
 ## Api
 

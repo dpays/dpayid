@@ -1,5 +1,5 @@
 const { metadata } = require('../db/models');
-const debug = require('debug')('sc2:server');
+const debug = require('debug')('dpid:server');
 
 /** Get user_metadata */
 const getUserMetadata = async (proxy, user) => {

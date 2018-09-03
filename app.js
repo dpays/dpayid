@@ -6,15 +6,15 @@ const http = require('http');
 const https = require('https');
 const csp = require('express-csp-header');
 const cors = require('cors');
-const steem = require('@steemit/steem-js');
+const dpay = require('@dpays/js');
 const db = require('./db/models');
 const { strategy } = require('./helpers/middleware');
 const logger = require('./helpers/logger');
 
-if (process.env.STEEMD_URL_SERVER) {
-  steem.api.setOptions({ url: process.env.STEEMD_URL_SERVER });
-} else if (process.env.STEEMD_URL) {
-  steem.api.setOptions({ url: process.env.STEEMD_URL });
+if (process.env.DPAYD_URL_SERVER) {
+  dpay.api.setOptions({ url: process.env.DPAYD_URL_SERVER });
+} else if (process.env.DPAYD_URL) {
+  dpay.api.setOptions({ url: process.env.DPAYD_URL });
 }
 
 http.globalAgent.maxSockets = Infinity;
@@ -82,7 +82,7 @@ app.enable('trust proxy');
 app.disable('x-powered-by');
 
 app.use((req, res, next) => {
-  req.steem = steem;
+  req.dpay = dpay;
   req.db = db;
   next();
 });

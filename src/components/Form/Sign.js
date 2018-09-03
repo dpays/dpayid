@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import steem from '@steemit/steem-js';
+import dpay from '@dpay/js';
 import { Form, Icon, Input, Button } from 'antd';
 import { accountExist } from '../../utils/validator';
 import './Sign.less';
@@ -37,14 +37,14 @@ class Sign extends React.Component {
       if (!err) {
         const { username, password } = values;
         const { roles, intl } = this.props;
-        const accounts = await steem.api.getAccountsAsync([username]);
+        const accounts = await dpay.api.getAccountsAsync([username]);
         const account = accounts[0];
 
         /** Change password to public WIF */
-        const privateWif = steem.auth.isWif(password)
+        const privateWif = dpay.auth.isWif(password)
           ? password
-          : steem.auth.toWif(username, password, roles[0]);
-        const publicWif = steem.auth.wifToPublic(privateWif);
+          : dpay.auth.toWif(username, password, roles[0]);
+        const publicWif = dpay.auth.wifToPublic(privateWif);
 
         /** Check if public WIF is valid */
         let wifIsValid = false;

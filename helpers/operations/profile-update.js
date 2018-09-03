@@ -1,11 +1,11 @@
 const changeCase = require('change-case');
 const { userExists, isEmpty, normalizeUsername } = require('../validation-utils');
 const customOperations = require('./custom-operations');
-const steem = require('@steemit/steem-js');
+const dpay = require('@dpay/js');
 
 const parse = async (query) => {
   const username = normalizeUsername(query.account);
-  const accounts = await steem.api.getAccountsAsync([username]);
+  const accounts = await dpay.api.getAccountsAsync([username]);
   const account = accounts.find(a => a.name === username);
   let jsonMetadata = {};
 

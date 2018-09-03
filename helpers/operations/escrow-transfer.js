@@ -10,11 +10,11 @@ const parse = (query) => {
   cQuery.agent = normalizeUsername(cQuery.agent);
   cQuery.escrow_id = parseInt(cQuery.escrow_id, 0);
 
-  let [amount, symbol] = cQuery.sbd_amount.split(' ');
-  cQuery.sbd_amount = join([parseFloat(amount).toFixed(3), symbol], ' ');
+  let [amount, symbol] = cQuery.bbd_amount.split(' ');
+  cQuery.bbd_amount = join([parseFloat(amount).toFixed(3), symbol], ' ');
 
-  [amount, symbol] = cQuery.steem_amount.split(' ');
-  cQuery.steem_amount = join([parseFloat(amount).toFixed(3), symbol], ' ');
+  [amount, symbol] = cQuery.dpay_amount.split(' ');
+  cQuery.dpay_amount = join([parseFloat(amount).toFixed(3), symbol], ' ');
 
   [amount, symbol] = cQuery.fee.split(' ');
   cQuery.fee = join([parseFloat(amount).toFixed(3), symbol], ' ');
@@ -35,19 +35,19 @@ const validate = async (query, errors) => {
     errors.push({ field: 'agent', error: 'error_user_exist', values: { user: query.agent } });
   }
 
-  if (!isEmpty(query.sbd_amount) && query.sbd_amount.split(' ')[1] !== 'SBD') {
-    errors.push({ field: 'sbd_amount', error: 'error_amount_symbol' });
-  } else if (!isEmpty(query.sbd_amount) && !isAsset(query.sbd_amount)) {
-    errors.push({ field: 'sbd_amount', error: 'error_amount_format' });
+  if (!isEmpty(query.bbd_amount) && query.bbd_amount.split(' ')[1] !== 'BBD') {
+    errors.push({ field: 'bbd_amount', error: 'error_amount_symbol' });
+  } else if (!isEmpty(query.bbd_amount) && !isAsset(query.bbd_amount)) {
+    errors.push({ field: 'bbd_amount', error: 'error_amount_format' });
   }
 
-  if (!isEmpty(query.steem_amount) && query.steem_amount.split(' ')[1] !== 'STEEM') {
-    errors.push({ field: 'steem_amount', error: 'error_amount_symbol' });
-  } else if (!isEmpty(query.steem_amount) && !isAsset(query.steem_amount)) {
-    errors.push({ field: 'steem_amount', error: 'error_amount_format' });
+  if (!isEmpty(query.dpay_amount) && query.dpay_amount.split(' ')[1] !== 'BEX') {
+    errors.push({ field: 'dpay_amount', error: 'error_amount_symbol' });
+  } else if (!isEmpty(query.dpay_amount) && !isAsset(query.dpay_amount)) {
+    errors.push({ field: 'dpay_amount', error: 'error_amount_format' });
   }
 
-  if (!isEmpty(query.fee) && !['STEEM', 'SBD'].includes(query.fee.split(' ')[1])) {
+  if (!isEmpty(query.fee) && !['BEX', 'BBD'].includes(query.fee.split(' ')[1])) {
     errors.push({ field: 'fee', error: 'error_amount_symbol' });
   } else if (!isEmpty(query.fee) && !isAsset(query.fee)) {
     errors.push({ field: 'fee', error: 'error_amount_format' });
