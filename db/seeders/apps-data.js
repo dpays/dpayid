@@ -4,11 +4,11 @@ module.exports = {
   up: function (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('apps', [
       {
-        client_id: 'busy.app',
+        client_id: 'dsocial.app',
         secret: 'secretkey-abc-123',
         owner: 'siol',
-        redirect_uris: JSON.stringify(['http://localhost:3000/demo', 'http://localhost:3000', 'https://sc2-angular.herokuapp.com', 'https://v2.steemconnect.com/demo', 'https://busy.org/callback']),
-        name: 'Busy.org',
+        redirect_uris: JSON.stringify(['http://localhost:3000/demo', 'http://localhost:3000', 'https://dpid-angular.herokuapp.com', 'https://go.dpayid.io/demo', 'https://dsocial.io/callback']),
+        name: 'dSocial.org',
         description: 'Ensuring compensation for the creators of value',
         icon: 'https://byteball.co/img/logo.jpg',
         website: 'https://busy.org',
@@ -24,7 +24,7 @@ module.exports = {
         client_id: 'simple-app',
         secret: 'secretkey-abc-456',
         owner: 'val',
-        redirect_uris: JSON.stringify(['http://localhost:3000/demo', 'http://localhost:3000', 'https://sc2-angular.herokuapp.com', 'https://v2.steemconnect.com/demo', 'https://busy.org/callback']),
+        redirect_uris: JSON.stringify(['http://localhost:3000/demo', 'http://localhost:3000', 'https://dpid-angular.herokuapp.com', 'https://go.dpayid.io/demo', 'https://dsocial.io/callback']),
         name: 'Simple App',
         description: 'This is a test app.',
         icon: 'https://byteball.co/img/logo.jpg',

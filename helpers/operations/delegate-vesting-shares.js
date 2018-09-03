@@ -1,7 +1,7 @@
 const cloneDeep = require('lodash/cloneDeep');
 const join = require('lodash/join');
-const steem = require('@steemit/steem-js');
-const { formatter } = require('@steemit/steem-js');
+const dpay = require('@dpay/js');
+const { formatter } = require('@dpay/js');
 const { isAsset, isEmpty, userExists, normalizeUsername } = require('../validation-utils');
 
 const optionalFields = ['delegator'];
@@ -9,17 +9,17 @@ const optionalFields = ['delegator'];
 const parse = async (query) => {
   const cQuery = cloneDeep(query);
   const [amount, symbol] = cQuery.vesting_shares.split(' ');
-  const globalProps = await steem.api.getDynamicGlobalPropertiesAsync();
+  const globalProps = await dpay.api.getDynamicGlobalPropertiesAsync();
 
   cQuery.delegatee = normalizeUsername(cQuery.delegatee);
   cQuery.delegator = normalizeUsername(cQuery.delegator);
 
-  if (symbol === 'SP') {
+  if (symbol === 'BP') {
     cQuery.vesting_shares = join([
       (
         (parseFloat(amount) *
         parseFloat(globalProps.total_vesting_shares)) /
-        parseFloat(globalProps.total_vesting_fund_steem)
+        parseFloat(globalProps.total_vesting_fund_dpay)
       ).toFixed(6),
       'VESTS',
     ], ' ');
@@ -39,7 +39,7 @@ const validate = async (query, errors) => {
   }
 
   if (!isEmpty(query.vesting_shares)) {
-    if (!['VESTS', 'SP'].includes(query.vesting_shares.split(' ')[1])) {
+    if (!['VESTS', 'BP'].includes(query.vesting_shares.split(' ')[1])) {
       errors.push({ field: 'vesting_shares', error: 'error_vests_symbol' });
     } else if (!isAsset(query.vesting_shares)) {
       errors.push({ field: 'vesting_shares', error: 'error_vests_format' });
@@ -51,36 +51,36 @@ const normalize = async (query) => {
   const cQuery = cloneDeep(query);
 
   let sUsername = normalizeUsername(query.delegatee);
-  let accounts = await steem.api.getAccountsAsync([sUsername]);
+  let accounts = await dpay.api.getAccountsAsync([sUsername]);
   let account = accounts && accounts.length > 0 && accounts.find(a => a.name === sUsername);
   if (account) {
     cQuery.toName = account.name;
-    cQuery.toReputation = steem.formatter.reputation(account.reputation);
+    cQuery.toReputation = dpay.formatter.reputation(account.reputation);
   }
 
   if (query.delegator) {
     sUsername = normalizeUsername(query.delegator);
-    accounts = await steem.api.getAccountsAsync([sUsername]);
+    accounts = await dpay.api.getAccountsAsync([sUsername]);
     account = accounts && accounts.length > 0 && accounts.find(a => a.name === sUsername);
     if (account) {
       cQuery.fromName = account.name;
-      cQuery.fromReputation = steem.formatter.reputation(account.reputation);
+      cQuery.fromReputation = dpay.formatter.reputation(account.reputation);
     }
   }
 
   const [amount, symbol] = cQuery.vesting_shares.split(' ');
   if (amount && symbol === 'VESTS') {
-    const globalProps = await steem.api.getDynamicGlobalPropertiesAsync();
+    const globalProps = await dpay.api.getDynamicGlobalPropertiesAsync();
     cQuery.amount = join(
       [
-        formatter.vestToSteem(
+        formatter.vestToDpay(
           cQuery.vesting_shares,
           globalProps.total_vesting_shares,
-          globalProps.total_vesting_fund_steem
+          globalProps.total_vesting_fund_dpay
         ).toFixed(3),
-        'SP',
+        'BP',
       ], ' ');
-  } else if (amount && symbol === 'SP') {
+  } else if (amount && symbol === 'BP') {
     cQuery.amount = join(
       [parseFloat(amount).toFixed(3), symbol],
       ' ');

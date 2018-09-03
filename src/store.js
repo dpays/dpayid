@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import steem from '@steemit/steem-js';
+import dpay from '@dpay/js';
 import auth from './reducers/auth';
 import appLocale from './reducers/appLocale';
 
@@ -9,8 +9,8 @@ const reducers = combineReducers({
   appLocale,
 });
 
-if (process.env.STEEMD_URL) {
-  steem.api.setOptions({ url: process.env.STEEMD_URL });
+if (process.env.DPAYD_URL) {
+  dpay.api.setOptions({ url: process.env.DPAYD_URL });
 }
 
 const store = createStore(

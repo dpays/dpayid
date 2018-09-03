@@ -9,7 +9,7 @@ export default class AccountForm extends Form {
     const password = createSuggestedPassword();
     const data = this.props.data || {
       password,
-      steem: '0.000 STEEM',
+      dpay: '0.000 BEX',
       vests: '0.000000 VESTS',
     };
     this.state = {
@@ -49,16 +49,16 @@ export default class AccountForm extends Form {
             <small><FormattedMessage id="password_tip" /></small>
           </div>
           <div className="form-group">
-            <label className="label" htmlFor="steem"><FormattedMessage id="steem" /></label>
+            <label className="label" htmlFor="dpay"><FormattedMessage id="dpay" /></label>
             <input
-              id="steem"
+              id="dpay"
               type="text"
               className="form-control"
-              name="steem"
+              name="dpay"
               onChange={this.onChange}
-              defaultValue={data.steem}
+              defaultValue={data.dpay}
             />
-            <small><FormattedMessage id="steem_tip" /></small>
+            <small><FormattedMessage id="dpay_tip" /></small>
           </div>
           <div className="form-group">
             <label className="label" htmlFor="vests"><FormattedMessage id="vests" /></label>

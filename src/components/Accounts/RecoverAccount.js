@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Card, notification } from 'antd';
-import steem from '@steemit/steem-js';
+import dpay from '@dpay/js';
 import { Link } from 'react-router';
 import RecoverAccountForm from '../Form/RecoverAccount';
 import Loading from '../../widgets/Loading';
@@ -52,17 +52,17 @@ class RecoverAccount extends React.Component {
     this.setState({ isLoading: false });
   };
 
-  // https://github.com/steemit/condenser/blob/0b3af70996c08423a770db2ef23189cd4e7d12be/app/redux/TransactionSaga.js#L481
+  // https://github.com/dsites/condenser/blob/0b3af70996c08423a770db2ef23189cd4e7d12be/app/redux/TransactionSaga.js#L481
   recoverAccount = async (accountToRecover, oldPassword, newPassword, onError, onSuccess) => {
-    const oldOwnerPrivate = steem.auth.isWif(oldPassword) ? oldPassword :
-      steem.auth.toWif(accountToRecover, oldPassword, 'owner');
+    const oldOwnerPrivate = dpay.auth.isWif(oldPassword) ? oldPassword :
+      dpay.auth.toWif(accountToRecover, oldPassword, 'owner');
 
-    const oldOwner = steem.auth.wifToPublic(oldOwnerPrivate);
+    const oldOwner = dpay.auth.wifToPublic(oldOwnerPrivate);
 
-    const newOwnerPrivate = steem.auth.toWif(accountToRecover, newPassword.trim(), 'owner');
-    const newOwner = steem.auth.wifToPublic(newOwnerPrivate);
+    const newOwnerPrivate = dpay.auth.toWif(accountToRecover, newPassword.trim(), 'owner');
+    const newOwner = dpay.auth.wifToPublic(newOwnerPrivate);
     const pwPubkey = (name, pw, role) =>
-      steem.auth.wifToPublic(steem.auth.toWif(name, pw.trim(), role));
+      dpay.auth.wifToPublic(dpay.auth.toWif(name, pw.trim(), role));
     const newActive = pwPubkey(accountToRecover, newPassword.trim(), 'active');
     const newPosting = pwPubkey(accountToRecover, newPassword.trim(), 'posting');
     const newMemo = pwPubkey(accountToRecover, newPassword.trim(), 'memo');
@@ -80,7 +80,7 @@ class RecoverAccount extends React.Component {
     };
 
     try {
-      await steem.broadcast.sendAsync({ extensions: [],
+      await dpay.broadcast.sendAsync({ extensions: [],
         operations: [
           ['recover_account', {
             account_to_recover: accountToRecover,
@@ -91,7 +91,7 @@ class RecoverAccount extends React.Component {
 
       // change password
       // change password probably requires a separate transaction (single trx has not been tested)
-      await steem.broadcast.sendAsync({ extensions: [],
+      await dpay.broadcast.sendAsync({ extensions: [],
         operations: [
           ['account_update', {
             account: accountToRecover,

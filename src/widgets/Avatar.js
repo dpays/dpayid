@@ -9,11 +9,11 @@ const Avatar = ({
 }) => {
   let src;
   if (username) {
-    src = `https://img.busy.org/@${username}?s=${size}`;
+    src = `https://img.dsocial.io/@${username}?s=${size}`;
   } else if (icon) {
-    src = `https://steemitimages.com/${size}x${size}/${icon}`;
+    src = `https://dsiteimages.com/${size}x${size}/${icon}`;
   } else {
-    src = `https://img.steemconnect.com/@steemconnect?s=${size}`;
+    src = `https://img.dpayid.io/@dpayid?s=${size}`;
   }
   return (
     <span

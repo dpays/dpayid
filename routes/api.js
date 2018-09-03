@@ -1,6 +1,6 @@
 const express = require('express');
 const { authenticate, verifyPermissions } = require('../helpers/middleware');
-const { encode } = require('@steemit/steem-js/lib/auth/memo');
+const { encode } = require('@dpay/js/lib/auth/memo');
 const { issueUserToken } = require('../helpers/token');
 const { getUserMetadata, updateUserMetadata } = require('../helpers/metadata');
 const { getErrorMessage } = require('../helpers/operation');
@@ -14,10 +14,10 @@ router.put('/me', authenticate('app'), async (req, res) => {
   const scope = req.scope.length ? req.scope : config.authorized_operations;
   let accounts;
   try {
-    accounts = await req.steem.api.getAccountsAsync([req.user]);
+    accounts = await req.dpay.api.getAccountsAsync([req.user]);
   } catch (err) {
-    req.log.error(err, 'me: SteemAPI request failed', req.user);
-    res.status(501).send('SteemAPI request failed');
+    req.log.error(err, 'me: dPayAPI request failed', req.user);
+    res.status(501).send('dPayAPI request failed');
     return;
   }
   const { user_metadata } = req.body;
@@ -64,10 +64,10 @@ router.all('/me', authenticate(), async (req, res) => {
   const scope = req.scope.length ? req.scope : config.authorized_operations;
   let accounts;
   try {
-    accounts = await req.steem.api.getAccountsAsync([req.user]);
+    accounts = await req.dpay.api.getAccountsAsync([req.user]);
   } catch (err) {
-    req.log.error(err, 'me: SteemAPI request failed', req.user);
-    res.status(501).send('SteemAPI request failed');
+    req.log.error(err, 'me: dPayAPI request failed', req.user);
+    res.status(501).send('dPayAPI request failed');
     return;
   }
   let userMetadata;
@@ -123,7 +123,7 @@ router.post('/broadcast', authenticate('app'), verifyPermissions, async (req, re
     });
   } else {
     req.log.error(`Broadcast transaction for @${req.user} from app @${req.proxy}`);
-    req.steem.broadcast.send(
+    req.dpay.broadcast.send(
       { operations, extensions: [] },
       { posting: process.env.BROADCASTER_POSTING_WIF },
       (err, result) => {
@@ -148,10 +148,10 @@ router.all('/login/challenge', async (req, res) => {
   const token = issueUserToken(username);
   let accounts;
   try {
-    accounts = await req.steem.api.getAccountsAsync([username]);
+    accounts = await req.dpay.api.getAccountsAsync([username]);
   } catch (err) {
-    req.log.error(err, 'challenge: SteemAPI request failed', username);
-    res.status(501).send('SteemAPI request failed');
+    req.log.error(err, 'challenge: dPayAPI request failed', username);
+    res.status(501).send('dPayAPI request failed');
     return;
   }
   const keyAuths = accounts[0][role].key_auths;

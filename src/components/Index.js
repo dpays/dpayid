@@ -118,9 +118,9 @@ class Index extends React.Component {
           <h3><FormattedMessage id="lp_section_1_title" /></h3>
         </div>
 
-        <div className="steem-features-container">
-          <div className="lp-container steem-features">
-            <div className="steem-feature">
+        <div className="dpay-features-container">
+          <div className="lp-container dpay-features">
+            <div className="dpay-feature">
               <object data="img/apps.svg" type="image/svg+xml" />
               <strong className="feature-title">
                 <FormattedMessage id="lp_feature_1_title" />
@@ -129,7 +129,7 @@ class Index extends React.Component {
                 <FormattedMessage id="lp_feature_1_description" />
               </p>
             </div>
-            <div className="steem-feature">
+            <div className="dpay-feature">
               <object data="img/account.svg" type="image/svg+xml" />
               <strong className="feature-title">
                 <FormattedMessage id="lp_feature_2_title" />
@@ -138,7 +138,7 @@ class Index extends React.Component {
                 <FormattedMessage id="lp_feature_2_description" />
               </p>
             </div>
-            <div className="steem-feature">
+            <div className="dpay-feature">
               <object data="img/wallet.svg" type="image/svg+xml" />
               <strong className="feature-title">
                 <FormattedMessage id="lp_feature_3_title" />
@@ -178,7 +178,7 @@ class Index extends React.Component {
             <div>
               <h4 className="project-title"><FormattedMessage id="lp_opensource_title" /></h4>
               <p><FormattedMessage id="lp_opensource_description" /></p>
-              <a href="https://github.com/steemit/steemconnect" target="_blank" rel="noreferrer noopener" className="lp-link">
+              <a href="https://github.com/dpays/dpayid" target="_blank" rel="noreferrer noopener" className="lp-link">
                 <FormattedMessage id="lp_opensource_button" />
               </a>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Card, notification } from 'antd';
-import steem from '@steemit/steem-js';
+import dpay from '@dpay/js';
 import RequestAccountRecoveryForm from '../Form/RequestAccountRecovery';
 import Loading from '../../widgets/Loading';
 import SignForm from '../Form/Sign';
@@ -66,8 +66,8 @@ class RecoverAccount extends React.Component {
            newPassword,
            onError,
            onSuccess) => {
-      const newOwnerPrivate = steem.auth.toWif(accountToRecover, newPassword.trim(), 'owner');
-      const newOwner = steem.auth.wifToPublic(newOwnerPrivate);
+      const newOwnerPrivate = dpay.auth.toWif(accountToRecover, newPassword.trim(), 'owner');
+      const newOwner = dpay.auth.wifToPublic(newOwnerPrivate);
       const newOwnerAuthority = {
         weight_threshold: 1,
         account_auths: [],
@@ -75,7 +75,7 @@ class RecoverAccount extends React.Component {
       };
 
       try {
-        await steem.broadcast.requestAccountRecoveryAsync(
+        await dpay.broadcast.requestAccountRecoveryAsync(
           creatorOwnerPrivate,
           recoveryAccount,
           accountToRecover,
