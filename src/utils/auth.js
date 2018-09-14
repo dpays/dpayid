@@ -1,7 +1,7 @@
-import dpay from '@dpay/js';
+import dpay from 'dpayjs';
 import fetch from 'isomorphic-fetch';
-import { decode } from '@dpay/js/lib/auth/memo';
-import { key_utils } from '@dpay/js/lib/auth/ecc'; // eslint-disable-line camelcase
+import { decode } from 'dpayjs/lib/auth/memo';
+import { key_utils } from 'dpayjs/lib/auth/ecc'; // eslint-disable-line camelcase
 
 export const login = ({ username, wif, role = 'posting' }, cb) => {
   fetch(`/api/login/challenge?username=${username}&role=${role}`)

@@ -1,5 +1,5 @@
 const changeCase = require('change-case');
-const operations = require('@dpay/js/lib/broadcast/operations');
+const operations = require('dpayjs/lib/broadcast/operations');
 const cloneDeep = require('lodash/cloneDeep');
 const get = require('lodash/get');
 const has = require('lodash/has');

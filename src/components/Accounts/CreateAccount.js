@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import dpay from '@dpay/js';
+import dpay from 'dpayjs';
 import { notification } from 'antd';
 import AccountForm from '../Form/AccountForm';
 import SignForm from '../Form/Sign';

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import fetch from 'isomorphic-fetch';
-import dpay from '@dpay/js';
+import dpay from 'dpayjs';
 import { notification, Modal } from 'antd';
 import { browserHistory } from 'react-router';
 import CreateAppForm from '../Form/CreateApp';

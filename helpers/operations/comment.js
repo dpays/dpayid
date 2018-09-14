@@ -1,5 +1,5 @@
 const cloneDeep = require('lodash/cloneDeep');
-const { formatter } = require('@dpay/js');
+const { formatter } = require('dpayjs');
 const changeCase = require('change-case');
 const diacritics = require('diacritics');
 

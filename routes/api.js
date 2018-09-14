@@ -1,6 +1,6 @@
 const express = require('express');
 const { authenticate, verifyPermissions } = require('../helpers/middleware');
-const { encode } = require('@dpay/js/lib/auth/memo');
+const { encode } = require('dpayjs/lib/auth/memo');
 const { issueUserToken } = require('../helpers/token');
 const { getUserMetadata, updateUserMetadata } = require('../helpers/metadata');
 const { getErrorMessage } = require('../helpers/operation');

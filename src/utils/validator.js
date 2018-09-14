@@ -1,4 +1,4 @@
-import dpay from '@dpay/js';
+import dpay from 'dpayjs';
 
 export const isUsername = async (username) => {
   const accounts = await dpay.api.getAccountsAsync([username]);

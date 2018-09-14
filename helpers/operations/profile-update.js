@@ -1,7 +1,7 @@
 const changeCase = require('change-case');
 const { userExists, isEmpty, normalizeUsername } = require('../validation-utils');
 const customOperations = require('./custom-operations');
-const dpay = require('@dpay/js');
+const dpay = require('dpayjs');
 
 const parse = async (query) => {
   const username = normalizeUsername(query.account);

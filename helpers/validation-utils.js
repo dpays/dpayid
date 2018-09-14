@@ -1,4 +1,4 @@
-const dpay = require('@dpay/js');
+const dpay = require('dpayjs');
 const moment = require('moment');
 
 const isEmpty = value => value === undefined || value === null || value === '';
