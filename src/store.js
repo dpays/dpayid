@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import dpay from '@dpay/js';
+import dpay from 'dpayjs';
 import auth from './reducers/auth';
 import appLocale from './reducers/appLocale';
 

@@ -1,6 +1,6 @@
 const cloneDeep = require('lodash/cloneDeep');
 const join = require('lodash/join');
-const dpay = require('@dpay/js');
+const dpay = require('dpayjs');
 const { isEmpty, userExists, normalizeUsername } = require('../validation-utils');
 
 const optionalFields = ['delegator', 'vesting_shares'];

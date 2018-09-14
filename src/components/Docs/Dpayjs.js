@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { FormattedMessage } from 'react-intl';
 import changeCase from 'change-case';
-import pkg from '@dpay/js/package.json';
-import methods from '@dpay/js/lib/api/methods';
-import operations from '@dpay/js/lib/broadcast/operations';
+import pkg from 'dpayjs/package.json';
+import methods from 'dpayjs/lib/api/methods';
+import operations from 'dpayjs/lib/broadcast/operations';
 
 const Method = ({ method }) => {
   const inlineParams = method.params

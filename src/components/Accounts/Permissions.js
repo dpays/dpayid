@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router';
-import dpay from '@dpay/js';
+import dpay from 'dpayjs';
 import numeral from 'numeral';
 import changeCase from 'change-case';
 import Loading from '../../widgets/Loading';
