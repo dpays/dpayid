@@ -9,7 +9,7 @@ const Avatar = ({
 }) => {
   let src;
   if (username) {
-    src = `https://img.dsocial.io/@${username}?s=${size}`;
+    src = `https://img.dsocial.io0/@${username}?s=${size}`;
   } else if (icon) {
     src = `https://dsiteimages.com/${size}x${size}/${icon}`;
   } else {
