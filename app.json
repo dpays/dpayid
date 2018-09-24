@@ -21,7 +21,7 @@
     "DPAYD_URL": {
       "required": true
     },
-    "DPAYD_URL_SERVER": "wss://dpayd.dpays.io",
+    "DPAYD_URL_SERVER": "ws://localhost:1776",
     "DEBUG": "dpid:*",
     "LOG_LEVEL": "info",
     "CSP_DEFAULT": {
