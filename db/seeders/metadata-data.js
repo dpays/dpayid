@@ -7,7 +7,7 @@ module.exports = {
         client_id: 'dsocial.app',
         user: 'jared',
         user_metadata: JSON.stringify({
-          locale: 'fr',
+          locale: 'en',
           color: 'blue',
         }),
         created_at: new Date(),
@@ -15,9 +15,9 @@ module.exports = {
       },
       {
         client_id: 'dsocial.app',
-        user: 'jared',
+        user: 'nomoreheroes',
         user_metadata: JSON.stringify({
-          locale: 'ru',
+          locale: 'en',
           color: 'red',
         }),
         created_at: new Date(),

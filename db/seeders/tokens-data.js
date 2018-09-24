@@ -5,8 +5,8 @@ module.exports = {
     return queryInterface.bulkInsert('tokens', [
       {
         client_id: 'dsocial.app',
-        user: 'guest123',
-        token: 'secret-token-123',
+        user: 'jared',
+        token: 'vrJSZj4Vy5SYzInjlR4wDl5OjrXhpRPxUvq5ccS2QESPWBJ5EBjzfmCDcY7HtiC1yLz',
         created_at: new Date(),
         updated_at: new Date(),
       }
