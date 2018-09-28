@@ -41,7 +41,7 @@ class CreateAccount extends Component {
     };
     dpay.broadcast.accountCreate(
       auth.wif,
-      0.001,
+      accountCreationFee,
       account.dpay,
       auth.username,
       account.name,

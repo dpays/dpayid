@@ -69,9 +69,6 @@ export const createSuggestedPassword = () => {
 };
 
 export const getAccountCreationFee = async () => {
-  const chainConfig = await dpay.api.getConfigAsync();
-  const chainProps = await dpay.api.getChainPropertiesAsync();
-  const accountCreationFee = chainProps.account_creation_fee;
-  const accountCreationDpayFee = parseFloat(accountCreationFee.split(' ')[0]);
-  return `${accountCreationDpayFee.toFixed(3)} BEX`;
+  const chainProps = await dpay.api.callAsync('condenser_api.get_chain_properties', []);
+  return chainProps.account_creation_fee;
 };
