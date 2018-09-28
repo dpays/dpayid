@@ -39,10 +39,10 @@ class CreateAccount extends Component {
       account_auths: [],
       key_auths: [[publicKeys.posting, 1]],
     };
-    dpay.broadcast.accountCreateWithDelegation(
+    dpay.broadcast.accountCreate(
       auth.wif,
+      0.001,
       account.dpay,
-      account.vests,
       auth.username,
       account.name,
       owner,

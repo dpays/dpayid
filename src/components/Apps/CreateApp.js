@@ -59,10 +59,9 @@ class CreateApp extends React.Component {
     const posting = { weight_threshold: 1, account_auths: [['dpayid', 1]], key_auths: [[publicKeys.posting, 1]] };
 
     /** Create proxy account */
-    await dpay.broadcast.accountCreateWithDelegationAsync(
+    await dpay.broadcast.accountCreate(
       auth.wif,
       accountCreationFee,
-      '0.000000 VESTS',
       auth.username,
       clientId,
       owner,

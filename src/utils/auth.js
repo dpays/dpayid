@@ -72,7 +72,6 @@ export const getAccountCreationFee = async () => {
   const chainConfig = await dpay.api.getConfigAsync();
   const chainProps = await dpay.api.getChainPropertiesAsync();
   const accountCreationFee = chainProps.account_creation_fee;
-  const dpayModifier = chainConfig.DPAY_CREATE_ACCOUNT_WITH_DPAY_MODIFIER;
-  const accountCreationDpayFee = parseFloat(accountCreationFee.split(' ')[0]) * dpayModifier;
+  const accountCreationDpayFee = parseFloat(accountCreationFee.split(' ')[0]);
   return `${accountCreationDpayFee.toFixed(3)} BEX`;
 };
