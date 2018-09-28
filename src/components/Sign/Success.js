@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 export default class Sign extends Component {
@@ -33,7 +34,7 @@ export default class Sign extends Component {
             {result.id}
           </a>
         </h5>}
-        {cb && <p><FormattedMessage id="redirect_ten_seconds" /></p>}
+        {cb && <p><FormattedMessage id="redirect_ten_seconds"></FormattedMessage></p>}
         {cb && <a className="Sign__button" href={cb} target="_blank" rel="noopener noreferrer"><FormattedMessage id="click_here" /></a>}
       </div>
     );

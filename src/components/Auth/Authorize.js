@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 import { Form, Button } from 'antd';
@@ -158,7 +159,7 @@ export default class Authorize extends Component {
                       <DSiteAvatar username={clientId} size="40" />}
                       {app &&
                       <img
-                        src={`https://dsiteimages.com/40x40/${app.icon}`}
+                        src={`https://steemitimages.com/40x40/${app.icon}`}
                         alt="icon"
                       />}
                     </div>

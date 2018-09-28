@@ -1,7 +1,7 @@
-'use strict';
+
 
 module.exports = {
-  up: function (queryInterface, Sequelize) {
+  up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert('apps', [
       {
         client_id: 'dsocial.app',
@@ -39,7 +39,7 @@ module.exports = {
       },
     ], {});
   },
-  down: function (queryInterface, Sequelize) {
+  down(queryInterface, Sequelize) {
     return queryInterface.bulkDelete('apps', null, {});
   },
 };

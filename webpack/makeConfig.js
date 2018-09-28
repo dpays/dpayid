@@ -23,7 +23,7 @@ function makePlugins(options) {
         // This has effect on the react lib size
         NODE_ENV: isDevelopment ? JSON.stringify('development') : JSON.stringify('production'),
         ENABLE_LOGGER: JSON.stringify(process.env.ENABLE_LOGGER),
-        DPAYD_URL: JSON.stringify(process.env.DPAYD_URL || 'ws://localhost:1776'),
+        DPAYD_URL: JSON.stringify(process.env.DPAYD_URL || 'https://api.dpays.io'),
         IS_BROWSER: JSON.stringify(true),
       },
     }),

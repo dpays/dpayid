@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { message, Button, Form, Input, Icon, Steps } from 'antd';
 import { injectIntl, FormattedMessage } from 'react-intl';
