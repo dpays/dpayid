@@ -9,7 +9,7 @@ const operationAuthor = require('./operation-author.json');
 const customOperations = require('./operations/custom-operations');
 const helperOperations = require('./operations');
 
-/** Parse error message from dpayd response */
+/** Parse error message from DPAYD response */
 const getErrorMessage = (error) => {
   let errorMessage = '';
   if (has(error, 'data.stack[0].format')) {

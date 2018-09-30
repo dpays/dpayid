@@ -52,11 +52,10 @@ class Index extends React.Component {
       <div>
         <div id="header">
           <img src="/img/macbook.png" id="macbook-img" alt="macbook" />
-          <object data="img/hero.svg" type="image/svg+xml" id="header-bg" />
           <div className="lp-container">
             <div id="menu">
               <div className="menu-item logo">
-                <object data="img/logo-white.svg" type="image/svg+xml" />
+                <img src="/img/logo_white.png" width="30px" id="logo" />
               </div>
               <div className="menu-item">
                 <Popover
@@ -79,36 +78,12 @@ class Index extends React.Component {
             <div className="hero">
               <h1 className="title"><FormattedMessage id="lp_hero_title" /></h1>
               <p className="sub-title"><FormattedMessage id="lp_hero_description" /></p>
-              <div className="newsletter">
-                <Form
-                  onSubmit={() => {}}
-                  action="//busy.us14.list-manage.com/subscribe/post?u=c8daffe293678b527521abf65&amp;id=0a6cefe541"
-                  method="post"
-                  name="mc-embedded-subscribe-form"
-                  target="_blank"
-                  className="ant-form ant-form-inline"
-                  layout="inline"
-                >
-                  <Form.Item hasFeedback>
-                    <input type="hidden" name="b_c8daffe293678b527521abf65_0a6cefe541" />
-                    {getFieldDecorator('email', {
-                      rules: [
-                        { type: 'email', message: intl.formatMessage({ id: 'error_invalid_email' }) },
-                        { required: true, message: intl.formatMessage({ id: 'error_empty_email' }) },
-                      ],
-                      className: 'hero_form_item',
-                    })(
-                      <Input name="EMAIL" placeholder={intl.formatMessage({ id: 'email_address' })} />
-                    )}
-                  </Form.Item>
-                  <Form.Item>
-                    <Button type="primary" name="subscribe" htmlType="submit" className="lp-link">
-                      <FormattedMessage id="signup" />
-                    </Button>
-                  </Form.Item>
-                </Form>
-              </div>
+              <a href="https://go.dpayid.io/login" rel="noreferrer noopener" className="btn btn-info btn-circle btn-translate--hover">
+                <FormattedMessage id="lp_beta_login_button" />
+              </a>
+
             </div>
+            <object data="img/hero.svg" type="image/svg+xml" id="header-bg" />
           </div>
         </div>
 
@@ -203,7 +178,7 @@ class Index extends React.Component {
               <p><FormattedMessage id="lp_subscribe_description" /></p>
             </div>
             <div>
-              <a href="http://eepurl.com/c1Z9VH" rel="noopener noreferrer" target="_blank" className="lp-link">
+              <a href="http://go.dpayid.io/login" rel="noopener noreferrer" target="_blank" className="btn btn-info btn-circle btn-translate--hover">
                 <FormattedMessage id="lp_subscribe_button" />
               </a>
             </div>

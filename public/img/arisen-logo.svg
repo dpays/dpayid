@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1218" height="1145" viewBox="0 0 1218 1145">
+  <defs>
+    <filter id="arisen-logo-a" width="103.6%" height="103.5%" x="-1.5%" y="-1.5%" filterUnits="objectBoundingBox">
+      <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4.5"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2403476 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <path id="arisen-logo-b" d="M405.50578,0.699745865 C388.462302,0.735678761 371.439696,4.13606542 358.507858,10.9009059 L47.2692479,173.727986 C21.2719964,187.327642 0,220.713084 0,247.916178 L0,573.564665 C0,600.765867 21.2719964,634.155092 47.2692479,647.75853 L185.084318,719.855048 L358.507858,810.579936 C384.50511,824.183374 427.049103,824.183374 453.044267,810.579936 L764.284965,647.75853 C790.290565,634.155092 811.554213,600.765867 811.554213,573.564665 L811.554213,247.916178 C811.554213,220.713084 790.290565,187.327642 764.284965,173.727986 L453.044267,10.9009059 C440.114517,4.13606542 423.09191,0.735678761 406.048433,0.699745865 L405.50578,0.699745865 Z"/>
+    <path id="arisen-logo-d" d="M358.507858,10.9009059 L47.2692479,173.727986 C21.2719964,187.327642 0,220.713084 0,247.916178 L0,573.564665 C0,600.765867 21.2719964,634.155092 47.2692479,647.75853 L185.084318,719.855048 L358.507858,810.579936 C384.50511,824.183374 427.049103,824.183374 453.044267,810.579936 L764.284965,647.75853 C790.290565,634.155092 811.554213,600.765867 811.554213,573.564665 L811.554213,247.916178 C811.554213,220.713084 790.290565,187.327642 764.284965,173.727986 L453.044267,10.9009059 C440.114517,4.13606542 423.09191,0.735678761 406.048433,0.699745865 C388.462302,0.735678761 371.439696,4.13606542 358.507858,10.9009059 Z"/>
+    <filter id="arisen-logo-e" width="102.3%" height="102.3%" x="-1.2%" y="-1.2%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="6"/>
+      <feOffset dx="2" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0616508152 0"/>
+    </filter>
+    <path id="arisen-logo-f" d="M0.605439848,270.049454 L159,564.850903 C159,595.863922 156.016612,645.974102 186.232641,661.483846 L276.056819,825.831382 L366.744898,864.926356 C316.947641,864.9242 326.436132,841.461837 347.852095,985.250673 C369.268058,1129.03951 741.012132,894.154315 705.785996,869.124199 C695.260969,861.645586 516.848137,420.750514 509.842958,334.455947 C509.702966,332.731433 510.693739,320.554143 509.842958,320.034969 C459.223191,289.145198 441.397528,147.982041 420.425053,119.66347 C365.084187,44.9381868 319.737985,8.27536168 331.070704,0.918818781 L0.605439848,270.049454 Z"/>
+    <filter id="arisen-logo-h" width="127.9%" height="137.9%" x="-9.8%" y="-18.1%" filterUnits="objectBoundingBox">
+      <feOffset dx="22" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="22"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.543421649 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <polygon id="arisen-logo-i" points="268 162 424 211.85 356.866 326"/>
+    <linearGradient id="arisen-logo-j" x1="0%" x2="102%" y1="0%" y2="101%">
+      <stop offset="0%" stop-color="#00C6FF" stop-opacity=".324"/>
+      <stop offset="100%" stop-color="#0072FF"/>
+    </linearGradient>
+    <linearGradient id="arisen-logo-l" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#F6F3EE"/>
+      <stop offset="100%" stop-color="#D6D6D6"/>
+    </linearGradient>
+    <polygon id="arisen-logo-k" points="358 325.912 563 414 425.573 212"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g filter="url(#arisen-logo-a)" transform="translate(203 162)">
+      <mask id="arisen-logo-c" fill="#fff">
+        <use xlink:href="#arisen-logo-b"/>
+      </mask>
+      <g mask="url(#arisen-logo-c)" opacity=".27">
+        <use fill="#FFF" xlink:href="#arisen-logo-d"/>
+        <use fill="#000" filter="url(#arisen-logo-e)" xlink:href="#arisen-logo-d"/>
+        <use stroke="#979797" stroke-opacity=".279" stroke-width="5" xlink:href="#arisen-logo-d"/>
+      </g>
+      <g mask="url(#arisen-logo-c)">
+        <g transform="rotate(-90 455 471.5)">
+          <mask id="arisen-logo-g" fill="#fff">
+            <use xlink:href="#arisen-logo-f"/>
+          </mask>
+          <path fill="#FFF" d="M159,217.697739 L95.8848062,392.644785 C95.8848062,427.778415 163.523262,612.797802 193.739291,630.368281 L276.056819,825.831382 L478.464926,839.373444 C428.667669,839.371001 478.464926,661.22023 478.464926,600.369651 C472.45099,418.562144 451.296208,291.00484 415.00058,217.697739 C370.841663,128.508975 264.469738,-6.22360451 95.8848062,-186.5 C95.8848062,-216.672468 232.1527,64.1827792 254.630358,47.6528982 L159,217.697739 Z" mask="url(#arisen-logo-g)"/>
+        </g>
+      </g>
+    </g>
+    <g filter="url(#arisen-logo-h)" transform="translate(328 310)">
+      <polygon fill="#3FB7DB" points="281.385 0 222 144.365 358.486 252 426 212.544"/>
+      <path fill="#00CBF0" d="M0,413 L269.322392,162.309569 L281.56589,0 L0,413 Z M358.574379,325.282409 L426,211.850061 L269.322392,162.309569 L358.574379,325.282409 Z"/>
+      <use fill="#00B8F0" xlink:href="#arisen-logo-i"/>
+      <use fill="#0099DA" xlink:href="#arisen-logo-i"/>
+      <polygon fill="url(#arisen-logo-j)" points="0 412 358 324.524 268.892 162"/>
+      <g>
+        <use fill="#00B8F0" xlink:href="#arisen-logo-k"/>
+        <use fill="url(#arisen-logo-l)" fill-opacity=".44" stroke="#979797" stroke-width="2" xlink:href="#arisen-logo-k"/>
+      </g>
+    </g>
+  </g>
+</svg>
