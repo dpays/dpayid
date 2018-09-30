@@ -154,7 +154,7 @@ class Index extends React.Component {
             <div>
               <h4 className="project-title"><FormattedMessage id="lp_opensource_title" /></h4>
               <p><FormattedMessage id="lp_opensource_description" /></p>
-              <a href="https://github.com/dpays/dpayid" target="_blank" rel="noreferrer noopener" className="lp-link">
+              <a href="https://github.com/dpays/dpayid" target="_blank" rel="noreferrer noopener" className="btn btn-success btn-circle btn-translate--hover">
                 <FormattedMessage id="lp_opensource_button" />
               </a>
             </div>
@@ -164,7 +164,7 @@ class Index extends React.Component {
             <div>
               <h4 className="project-title"><FormattedMessage id="lp_developers_title" /></h4>
               <p><FormattedMessage id="lp_developers_description" /></p>
-              <Link to="/dashboard" className="lp-link">
+              <Link to="/dashboard" className="btn btn-success btn-circle btn-translate--hover">
                 <FormattedMessage id="lp_developers_button" />
               </Link>
             </div>

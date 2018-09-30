@@ -68,7 +68,7 @@ export default class Login extends Component {
         <div className="Sign__content container my-2 login-form Sign__authorize">
           <div className="Sign_frame">
             <div className="Sign__header">
-              <img src="/img/logo.png" id="logo" />
+              <img src="/img/logo.png" height="50px" id="logo" />
             </div>
             <div className="Sign__wrapper">
               {step === 0 && <Loading />}
